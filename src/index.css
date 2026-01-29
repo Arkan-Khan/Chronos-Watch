@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --yellow: #FFE135;
+  --yellow-dark: #E6CA30;
+  --yellow-light: #FFF066;
+  --black: #0A0A0A;
+  --black-light: #1A1A1A;
+  --black-lighter: #2A2A2A;
+  --white: #FFFFFF;
+  --gray: #808080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}

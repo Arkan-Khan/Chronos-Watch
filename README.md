@@ -1,16 +1,80 @@
-# React + Vite
+# CHRONOS - Premium Smartwatch Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A stunning, animated landing page for a premium smartwatch brand built with React and Vite. Features smooth parallax scrolling, CSS animations, and a modern dark theme with yellow accents.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Parallax Scrolling** - Dynamic watch animation that responds to scroll
+- **Animated UI Elements** - Pulsing icons, glowing effects, and smooth transitions
+- **Interactive Components** - Hover effects on cards, buttons, and navigation
+- **Responsive Design** - Fully responsive layout for all screen sizes
+- **Pure CSS Graphics** - Watch visuals created entirely with CSS (no images)
+- **Scroll Animations** - Elements animate into view as you scroll
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite
+- CSS3 (Animations, Flexbox, Grid)
+- Google Fonts (Syne, Space Mono)
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Arkan-Khan/Chronos-Watch.git
+   ```
+
+2. Navigate to the project directory
+   ```bash
+   cd Chronos-Watch
+   ```
+
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+
+4. Start the development server
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and visit `http://localhost:5173`
+
+## 📁 Project Structure
+
+```
+Chronos-Watch/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── App.jsx        # Main component
+│   ├── App.css        # All styles and animations
+│   ├── main.jsx       # Entry point
+│   └── index.css      # Global styles
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## 🎨 Sections
+
+- **Navigation** - Fixed navbar with smooth hover effects
+- **Hero** - Animated watch with parallax effect
+- **Features** - 6 feature cards with animated icons
+- **Specs** - Technical specifications with 3D rotating watch
+- **Gallery** - 4 watch visuals with different views
+- **CTA** - Call-to-action with pricing
+- **Footer** - Links and branding
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
