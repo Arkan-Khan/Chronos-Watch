@@ -256,7 +256,7 @@ function App() {
       {/* Gallery Section */}
       <section className="gallery" id="gallery">
         <h2 className="section-title">
-          Designed to <span className="title-accent">Impress</span>
+          Designed to <span className="title-accent">Impress you</span>
         </h2>
 
         <div className="gallery-grid">

@@ -1,0 +1,23 @@
+name: Deploy to Lubuntu
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH and Deploy to Lubuntu
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ~/apps/Chronos-Watch
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart chronos || pm2 start "serve -s dist -l 3000" --name chronos
