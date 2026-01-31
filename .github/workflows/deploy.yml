@@ -1,23 +1,22 @@
-name: Deploy to Lubuntu
+name: Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      - name: SSH and Deploy to Lubuntu
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd ~/apps/Chronos-Watch
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart chronos || pm2 start "serve -s dist -l 3000" --name chronos
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy locally
+        run: |
+          cd ~/apps/Chronos-Watch
+          git pull origin main
+          npm install
+          npm run build
+          pm2 restart chronos || pm2 start "serve -s dist -l 3000" --name chronos
