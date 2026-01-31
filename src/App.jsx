@@ -6,6 +6,15 @@ function App() {
   const heroRef = useRef(null);
   const featuresRef = useRef(null);
   const [isVisible, setIsVisible] = useState({});
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,19 +54,24 @@ function App() {
   return (
     <div className="app">
       {/* Navigation */}
-      <nav className="navbar">
+      <nav className={`navbar ${mobileMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-content">
-          <div className="logo">
+          <a href="/" className="logo" onClick={closeMobileMenu}>
             <div className="logo-icon"></div>
             <span>CHRONOS</span>
-          </div>
-          <ul className="nav-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#specs">Specs</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+          </a>
+          <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+            <li><a href="#features" onClick={closeMobileMenu}>Features</a></li>
+            <li><a href="#specs" onClick={closeMobileMenu}>Specs</a></li>
+            <li><a href="#gallery" onClick={closeMobileMenu}>Gallery</a></li>
+            <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
           </ul>
-          <button className="cta-button">Pre-Order Now</button>
+          <button className="cta-button desktop-only">Pre-Order Now</button>
+          <button className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
         </div>
       </nav>
 
@@ -81,6 +95,12 @@ function App() {
             <div className="hero-buttons">
               <button className="btn-primary">Explore Now</button>
               <button className="btn-secondary">Watch Video</button>
+            </div>
+            <div className="scroll-indicator mobile-only">
+              <div className="mouse">
+                <div className="wheel"></div>
+              </div>
+              <span>Scroll to explore</span>
             </div>
           </div>
 
@@ -114,7 +134,7 @@ function App() {
           </div>
         </div>
 
-        <div className="scroll-indicator">
+        <div className="scroll-indicator desktop-only">
           <div className="mouse">
             <div className="wheel"></div>
           </div>
@@ -205,9 +225,15 @@ function App() {
           <div className={`specs-visual animate-on-scroll ${isVisible['specs-visual'] ? 'visible' : ''}`} id="specs-visual">
             <div className="rotating-watch">
               <div className="watch-3d">
-                <div className="watch-face face-front"></div>
-                <div className="watch-face face-back"></div>
-                <div className="watch-face face-side"></div>
+                <div className="watch-face face-front">
+                  <div className="face-ring ring-outer"></div>
+                  <div className="face-ring ring-inner"></div>
+                </div>
+                <div className="watch-face face-back">
+                  <div className="face-ring ring-outer"></div>
+                  <div className="face-ring ring-inner"></div>
+                </div>
+                <div className="watch-side-connector"></div>
               </div>
             </div>
           </div>
