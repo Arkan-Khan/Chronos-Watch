@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Transparent background -->
+  
+  <!-- Outer yellow circle -->
+  <circle cx="256" cy="256" r="240" fill="#FFE135" stroke="#0A0A0A" stroke-width="8"/>
+  
+  <!-- Middle black circle -->
+  <circle cx="256" cy="256" r="160" fill="#0A0A0A"/>
+  
+  <!-- Inner yellow circle with glow -->
+  <circle cx="256" cy="256" r="80" fill="#FFE135"/>
+  
+  <!-- Glow effect -->
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0%" style="stop-color:#FFE135;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFE135;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glowFilter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+    </filter>
+  </defs>
+  
+  <!-- Glow layer behind inner circle -->
+  <circle cx="256" cy="256" r="90" fill="url(#glow)" filter="url(#glowFilter)"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0%" style="stop-color:#FFE135;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE135;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>
